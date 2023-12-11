@@ -15,10 +15,6 @@ const ArticlesList = () => {
   .then((response) => {
     setArticles(response.data.articles);
   })
-    //   .then((articles) => {
-    //     console.log(articles);
-//         
-// })
      .catch((err) => {
         console.log(err);
         setIsError(true);
@@ -35,7 +31,7 @@ const ArticlesList = () => {
   return (
     <>
     {articles.map((article) => {
-        
+
         return <ArticleCard key={article.article_id} article={article} />
     })}
     </>
