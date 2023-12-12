@@ -4,3 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+
+.image {
+  max-width: 350px;
+}
+
+.article-card {
+  margin: 20px 0;
+}
+
+.article {
+  max-width: auto
+}
