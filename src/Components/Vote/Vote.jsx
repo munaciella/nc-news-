@@ -15,7 +15,7 @@ const Vote = ({ article_id, votes }) => {
 
       setTimesClicked(timesClicked + 1)
       setCurrVotes(currVotes + 1)
-      voteArticle(1, article_id).then((data) => {
+      voteArticle(article_id, 1).then((data) => {
         if (data.error) {
           setButtonColor('error')
         }
@@ -27,7 +27,7 @@ const Vote = ({ article_id, votes }) => {
     if (timesClicked >= 0) {
       setTimesClicked(timesClicked - 1)
       setCurrVotes(currVotes - 1)
-      voteArticle(-1, article_id).then((data) => {
+      voteArticle(article_id, -1).then((data) => {
         if (data.error) {
           setButtonColor('error')
         }

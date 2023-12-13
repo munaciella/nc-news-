@@ -3,6 +3,7 @@ import ArticleCard from '../ArticleCard/ArticleCard';
 import { useParams } from 'react-router-dom';
 import { getArticleById } from '../../API/api';
 import CommentList from '../CommentList/CommentList';
+// import CommentForm from '../CommentForm/CommentForm';
 
 const ArticlePage = (comment) => {
   const { article_id } = useParams();
@@ -27,12 +28,12 @@ const ArticlePage = (comment) => {
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <h2>Something went wrong</h2>;
-
-
+  
   return  (
     <>
   <ArticleCard key={article.article_id} article={article} />
   <CommentList comment={comment} />
+  {/* <CommentForm article_id={article_id} /> */}
   </>
   )
 };
