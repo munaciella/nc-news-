@@ -16,3 +16,9 @@ exports.getArticlesById = (article_id) => {
     return response.data.article
   })
 }
+
+exports.voteArticle = (article_id, inc_votes) => {
+    const { data } = await newsApi.patch(`/articles/${article_id}`, { inc_votes });
+  
+    return data.article;
+  }
