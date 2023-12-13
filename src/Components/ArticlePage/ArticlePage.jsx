@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { getArticleById } from '../../API/api';
 
 const ArticlePage = () => {
   const { article_id } = useParams();
@@ -11,9 +11,8 @@ const ArticlePage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-      .get(`https://nc-news-bgp4.onrender.com/api/articles/${article_id}`)
-      .then(({data}) => {
+    getArticleById(article_id)
+      .then(({ data }) => {
         setArticle(data.article);
       })
       .catch((err) => {
@@ -28,7 +27,8 @@ const ArticlePage = () => {
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <h2>Something went wrong</h2>;
 
-  return <ArticleCard key={article.article_id} article={article} />;
+
+  return  <ArticleCard key={article.article_id} article={article} />
 };
 
 export default ArticlePage;

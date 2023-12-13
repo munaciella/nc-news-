@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
-import axios from 'axios';
+import { getArticles } from '../../API/api';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -9,12 +9,11 @@ const ArticlesList = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-  .get('https://nc-news-bgp4.onrender.com/api/articles')
-  .then((response) => {
-    setArticles(response.data.articles);
-  })
-     .catch((err) => {
+    getArticles()
+      .then((response) => {
+        setArticles(response.data.articles);
+      })
+      .catch((err) => {
         console.log(err);
         setIsError(true);
       })
@@ -22,17 +21,15 @@ const ArticlesList = () => {
         setIsLoading(false);
       });
   }, []);
-  console.log(articles);
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <h2>Something went wrong</h2>;
 
   return (
     <>
-    {articles.map((article) => {
-
-        return <ArticleCard key={article.article_id} article={article} />
-    })}
+      {articles.map((article) => {
+        return <ArticleCard key={article.article_id} article={article} />;
+      })}
     </>
   );
 };

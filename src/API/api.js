@@ -1,18 +1,17 @@
 import axios from 'axios';
 
-exports.getArticles = () => {
-    axios
-  .get('https://nc-news-bgp4.onrender.com/api/articles')
-  .then((response) => {
-    console.log(response);
-  })
+const articlesApi = axios.create({
+  baseURL: 'https://nc-news-bgp4.onrender.com/api/'
+});
+
+export function getArticles () {
+  return articlesApi.get('/articles')
 }
 
-exports.getArticlesById = (article_id) => {
-    axios
-  .get(`https://nc-news-bgp4.onrender.com/api/articles/${article_id}`)
-  .then((response) => {
-    console.log(response);
-    return response.data.article
-  })
+export function getArticleById (article_id) {
+  return articlesApi.get(`/articles/${article_id}`)
+}
+
+export function getComments(article_id) {
+  return articlesApi.get(`/articles/${article_id}/comments`)
 }
