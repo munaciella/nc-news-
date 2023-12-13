@@ -1,27 +1,46 @@
-import Card from "@mui/material/Card"
-import { Link } from "react-router-dom";
+import Card from '@mui/material/Card';
+import { Link } from 'react-router-dom';
+import Vote from '../Vote/Vote';
 
+const ArticleCard = ({ article }) => {
+  const {
+    article_id,
+    body,
+    votes,
+    title,
+    topic,
+    article_img_url,
+    author,
+    comment_count,
+    created_at,
+  } = article;
 
-const ArticleCard = (props) => {
+  const date = new Date(created_at);
   return (
-    <div>
-        <Link to={`/articles/${props.article.article_id}`}>
-    <Card className="article-card" variant="outlined" >
-    
-    <ul className="article" >
-      <h2>{props.article.title}</h2>
-      <img className="image" src={props.article.article_img_url} 
-      alt="article image"/>
-      <p>Author: {props.article.author}</p>
-      <p>Comment count: {props.article.comment_count}</p>
-      <p>Topic: {props.article.topic}</p>
-      <p>Article ID: {props.article.article_id}</p>
-      <p>Votes: {props.article.votes}</p>
-    </ul>
-    </Card>
-    </Link>
-    </div>
-    )
-    }
+    <li>
+      <div>
+        <Card className="article-card" variant="outlined">
+          <ul className="article">
+          <Vote article_id={article_id} votes={votes} />
+            <h3>{title}</h3>
+            <h4>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h4>
+            <Link to={`/articles/${article_id}`}>
+              <img
+                className="article-image"
+                src={article_img_url}
+                alt="article image"
+              />
+            </Link>
+            <p>Author: {author}</p>
+            <p>{comment_count} comments</p>
+            <p>{body}</p>
+            Created on {date.toLocaleDateString()} at{' '}
+            <time>{date.toLocaleTimeString()}</time>
+          </ul>
+        </Card>
+      </div>
+    </li>
+  );
+};
 
 export default ArticleCard;
