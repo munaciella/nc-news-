@@ -33,7 +33,6 @@ const ArticlePage = (comment) => {
     <>
   <ArticleCard key={article.article_id} article={article} />
   <CommentList comment={comment} />
-  {/* <CommentForm article_id={article_id} /> */}
   </>
   )
 };

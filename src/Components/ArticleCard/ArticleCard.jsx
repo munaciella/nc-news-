@@ -1,7 +1,6 @@
 import Card from '@mui/material/Card';
 import { Link } from 'react-router-dom';
 import Vote from '../Vote/Vote';
-import CommentForm from '../CommentForm/CommentForm';
 
 const ArticleCard = ({ article }) => {
   const {
@@ -37,7 +36,6 @@ const ArticleCard = ({ article }) => {
             <p>{body}</p>
             Created on {date.toLocaleDateString()} at{' '}
             <time>{date.toLocaleTimeString()}</time>
-            <CommentForm article_id={article_id} />
           </ul>
         </Card>
       </div>
