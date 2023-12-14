@@ -1,42 +1,47 @@
-import { useState } from 'react';
 import { postComment } from '../../API/api';
+import { UsernameContext } from '../../../UsernameContext/UsernameContext';
+import { useContext, useState } from 'react';
 
 const CommentForm = ({ article_id, comments, setComments }) => {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [isError, setIsError] = useState(false);
   const [input, setInput] = useState('');
+  const { username } = useContext(UsernameContext);
+  const [isError, setIsError] = useState(false)
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postComment(article_id, username, input)
+      .then((data) => {
+        setComments((currentComments) => {
+          return [data.comment, ...currentComments];
+        });
+        setInput('');
+      })
+      .catch((err) => {
+        setIsError('Something went wrong, please try again.');
+      });
+  };
 
   const handleChange = (event) => {
     setInput(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    postComment(article_id, input)
-        .then((response) => {
-            console.log(response.data);
-          setComments(comment);
-        })
-    const newComment = {
-      comment_id: comments.length + 1,
-      author: user.username,
-      body: input,
-    };
-    setComments([newComment, ...comments]);}
-
-    return (
+  return (
+    <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="comment">Comment</label>
 
         <textarea
           id="comment"
+          style={{ width: 'none' }}
           onChange={handleChange}
           value={input}
           placeholder="Write a comment..."
+          required
         />
-        <button >Submit</button>
+        <button>Submit</button>
       </form>
-    );
-  };
+    </>
+  );
+};
 
 export default CommentForm;
