@@ -1,4 +1,4 @@
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, handleDelete }) => {
   return (
     <>
       <div className="comment-card-container">
@@ -6,6 +6,8 @@ const CommentCard = ({ comment }) => {
         <h3>Votes: {comment.votes}</h3>
         <h3>Comment:</h3>
         <p>{comment.body}</p>
+
+        <button onClick={() => {handleDelete(comment.comment_id)}}>Delete</button>
       </div>
     </>
   );

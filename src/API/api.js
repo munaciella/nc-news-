@@ -28,12 +28,16 @@ export function postComment(article_id, username, commentBody) {
   };
   return articlesApi
     .post(`/articles/${article_id}/comments`, body)
-    .then((data) => {
+    .then(({data}) => {
       return data;
     })
     .catch((err) => {
       return { err };
     });
+}
+
+export function deleteComment(comment_id) {
+  return articlesApi.delete(`/comments/${comment_id}`)
 }
 
 export const getUsers = () => {
@@ -47,3 +51,5 @@ export function getUser(username) {
     return data;
   });
 }
+
+
