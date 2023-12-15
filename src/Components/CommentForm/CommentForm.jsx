@@ -7,12 +7,13 @@ const CommentForm = ({ article_id, comments, setComments }) => {
   const { username } = useContext(UsernameContext);
   const [isError, setIsError] = useState(false);
   const [disabled, setDisabled] = useState(false);
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    postComment(article_id, username, input)
+    if (input) {
+      setDisabled(true);
+      postComment(article_id, username, input)
       .then((data) => {
-        console.log(data);
         setComments((currentComments) => {
           return [data.comment, ...currentComments];
         });
@@ -20,9 +21,15 @@ const CommentForm = ({ article_id, comments, setComments }) => {
       })
       .catch((err) => {
         setIsError('Something went wrong, please try again.');
+      })
+      .finally(() => {
+        setDisabled(false);
+        setTimeout(() => {
+        }, 2000);
       });
+    }
   };
-
+  
   const handleChange = (event) => {
     setInput(event.target.value);
   };
@@ -41,30 +48,8 @@ const CommentForm = ({ article_id, comments, setComments }) => {
           required
         />
         <button>Submit</button>
-        
-        {/* <section className="comment-card">
-      <p>
-        
-        {username ? (
-          <button
-            disabled={disabled}
-            onClick={() => {handleDelete(comments.comment_id)} 
-
-            }
-          >
-            ❌
-          </button>
-        ) : null}
-      </p>
-      <p>{comments}</p>
-      {isError ? (
-        <p className="error-message">
-          Failed to delete message. Please try again.
-        </p>
-      ) : null}
-    </section> */}
       </form>
-    </>
+      </>
   );
 };
 

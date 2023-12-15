@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import { getArticles } from '../../API/api';
+import Error from '../../../Error/Error';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -23,7 +24,7 @@ const ArticlesList = () => {
   }, []);
 
   if (isLoading) return <h2>Loading...</h2>;
-  if (isError) return <h2>Something went wrong</h2>;
+  else if (isError) return <Error title="404 Article Not Found" />
 
   return (
     <>
