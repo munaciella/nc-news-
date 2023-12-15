@@ -18,11 +18,32 @@ export function getComments(article_id) {
 
 export function voteArticle(article_id, votes) {
   const result = { votes: votes };
-  return articlesApi.patch(`https://nc-news-bgp4.onrender.com/api/articles/${article_id}`, result)
+  return articlesApi.patch(`/articles/${article_id}`, result);
+}
+
+export function postComment(article_id, username, commentBody) {
+  const body = {
+    username: username,
+    body: commentBody,
+  };
+  return articlesApi
+    .post(`/articles/${article_id}/comments`, body)
     .then((data) => {
       return data;
     })
     .catch((err) => {
       return { err };
     });
+}
+
+export const getUsers = () => {
+  return articlesApi.get('/users').then(({ data }) => {
+    return data;
+  });
+};
+
+export function getUser(username) {
+  return articlesApi.get(`/users/${username}`).then((data) => {
+    return data;
+  });
 }
