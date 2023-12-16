@@ -4,3 +4,37 @@
     padding: 2rem;
     text-align: center;
   }
+
+  .article-card {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(40, 122, 110, 0.1);
+  }
+  
+  .article {
+    padding: 16px;
+  }
+  
+  .article h3 {
+     font-size:18px;
+     margin-bottom:8px;
+  }
+  
+  .article h4 {
+     font-size:14px;
+     color:#999999;
+     margin-bottom:8px; 
+  }
+  
+  .article p {
+      margin-bottom:8px; 
+      line-height:normal; 
+      color:#333333; 
+      font-size:.9rem
+  }
+  
+  .article-image {
+      width:auto; 
+      height:auto; 
+      max-width:100%;  
+  }

@@ -1,0 +1,30 @@
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  .comment-card-container {
+    background-color: #f4f1ee;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .comment-card-container h3 {
+    font-size: 16px;
+    color: black;
+  }
+  
+  .comment-card-container p {
+     margin-top:5px; 
+     color:black; 
+  }
+  
+  .comment-card-container button {
+     background-color:#ff4500; 
+     color:#ffffff; 
+     border-radius:4px; 
+     padding:.5em .75em;  
+  }

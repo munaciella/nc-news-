@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
-import { getUsers } from "../src/API/api";
+import { getUsers } from "../../API/api";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);

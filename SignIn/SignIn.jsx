@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UsernameContext } from "../UsernameContext/UsernameContext";
+import { UsernameContext } from "../src/Components/UsernameContext/UsernameContext";
 import { getUser } from "../src/API/api";
+import './SignIn.css'
 
 const SignIn = () => {
     const { username, setUsername } = useContext(UsernameContext)
@@ -28,38 +29,30 @@ const SignIn = () => {
             setIsLoading(false);
           });
           
-    
-      if (isLoading) return <h2>Loading...</h2>;
-      if (isError) return <h2>Something went wrong</h2>;
+      if (isLoading) return <div className="loading-container"><h2>Loading...</h2></div>;
+if (isError) return <div className="error-container"><h2>Something went wrong</h2></div>;
     };
   
     const handleChange = (event) => {
       setUsernameInput(event.target.value)
     }
 
-  return (
-    <form
-      onSubmit={(event) => {
-        handleSubmit(event);
-      }}
-    >
-      <h2>Already have an account ?</h2>
-      <label htmlFor="username">Username: </label>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Enter your username"
-        required
-        onChange={(event) => {
-          handleChange(event.target.value);
-        }}
-        value={username}
-      />
-      <button>Sign In</button>
-
-    </form>
-  );
-}
+    return (
+      <form onSubmit={handleSubmit}>
+        <h2>Already have an account?</h2>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter your username"
+          required
+          onChange={(event) => handleChange(event.target.value)}
+          value={username}
+        />
+        <button type="submit">Sign In</button>
+      </form>
+    );
+  };
 
 export default SignIn

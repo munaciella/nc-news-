@@ -3,7 +3,7 @@ import ArticlesList from './Components/ArticlesList/ArticlesList';
 import ArticlePage from './Components/ArticlePage/ArticlePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
-import { UsernameProvider } from "../UsernameContext/UsernameContext.jsx"
+import { UsernameProvider } from "../src/Components/UsernameContext/UsernameContext.jsx"
 import LoginPage from '../LoginPage/LoginPage.jsx';
 import Error from '../Error/Error.jsx';
 import NavBar from '../NavBar/NavBar.jsx';

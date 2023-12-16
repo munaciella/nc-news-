@@ -1,0 +1,18 @@
+.error-container {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 20px;
+  }
+  
+  .error-title {
+    font-size: 24px;
+  }
+  
+  .error-msg {
+    margin-top: 10px;
+  }
+  
+  .error-link {
+     color: #0079D3;
+     text-decoration-line:none
+  }

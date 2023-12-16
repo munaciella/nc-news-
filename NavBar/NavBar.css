@@ -1,0 +1,19 @@
+.nav {
+    background-color: #FF4500;
+    padding: 10px;
+  }
+  
+  .ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .li {
+    margin: 0px 10px;
+  }
+  
+  .link {
+     color: #FFFFFF;
+     text-decoration-line:none
+  }
