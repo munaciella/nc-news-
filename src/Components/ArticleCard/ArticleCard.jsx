@@ -11,7 +11,7 @@ const ArticleCard = ({ article }) => {
   const date = new Date(created_at);
  
   return (
-    <li>
+    <>
       <div>
         <Card className="article-card" variant="outlined">
           <ul className="article">
@@ -29,7 +29,7 @@ const ArticleCard = ({ article }) => {
           </ul>
         </Card>
       </div>
-    </li>
+    </>
   );
  };
  

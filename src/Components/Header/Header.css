@@ -1,10 +1,12 @@
-header {
+  header {
     background-color: #FF4500;
-    padding: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
   }
   
   h1 {
     color: white;
-    font-size: 24px;
+    font-size: 22px;
+    font-family:'Futura', sans-serif ;
   }
-  

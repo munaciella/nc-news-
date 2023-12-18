@@ -1,18 +1,52 @@
-.error-container {
-    background-color: #FFFFFF;
+/* .error-container {
+    background-color: #2a2a2a;
     border: 1px solid #CCCCCC;
     padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
   }
   
   .error-title {
     font-size: 24px;
+    font-family:'Futura', sans-serif ;
   }
   
   .error-msg {
     margin-top: 10px;
+    font-family:'Futura', sans-serif ;
   }
   
   .error-link {
      color: #0079D3;
      text-decoration-line:none
+  } */
+
+  :root {
+    --background-color: #2a2a2a;
+    --text-color: #CCCCCC;
+    --link-color: #0079D3;
+  }
+  
+  .error-container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .error-title {
+   font-size:24px ;
+   font-family:'Futura', sans-serif ;
+  }
+  
+  .error-msg {
+   margin-top :10px ;
+   font-family:'Futura', sans-serif ;
+  }
+  
+  .error-link {
+   color :var(--link-color) ;
+   text-decoration-line:none
   }

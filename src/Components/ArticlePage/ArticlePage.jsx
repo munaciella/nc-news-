@@ -31,8 +31,10 @@ const ArticlePage = (comment) => {
   
   return  (
     <>
+    <div className="article-page">
   <ArticleCard key={article.article_id} article={article} />
   <CommentList comment={comment} />
+  </div>
   </>
   )
 };

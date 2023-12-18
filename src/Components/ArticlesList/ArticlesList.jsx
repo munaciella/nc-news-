@@ -28,9 +28,11 @@ const ArticlesList = () => {
 
   return (
     <>
+    <div className="article-list">
       {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article} />;
       })}
+      </div>
     </>
   );
 };

@@ -3,7 +3,7 @@ import './CommentCard.css'
 const CommentCard = ({ comment, handleDelete }) => {
   return (
       <>
-      <div className="center-container, comment-card-container">
+      <div className="comment-card-container">
               <h3>Author: {comment.author}</h3>
               <h3>Votes: {comment.votes}</h3>
               <h3>Comment:</h3>
