@@ -15,7 +15,7 @@ const Vote = ({ article_id, votes }) => {
       setTimesClicked(timesClicked + 1);
       setTimeout(() => {
         setCurrVotes(currVotes + 1);
-      }, 500);
+      }, 2000);
       voteArticle(article_id, 1).then((data) => {
         if (data.error) {
           setButtonColor('error');
@@ -28,7 +28,7 @@ const Vote = ({ article_id, votes }) => {
       setTimesClicked(timesClicked - 1);
       setTimeout(() => {
         setCurrVotes(currVotes - 1);
-      }, 500);
+      }, 2000);
       voteArticle(article_id, -1).then((data) => {
         if (data.error) {
           setButtonColor('error');

@@ -1,0 +1,58 @@
+/* .CommentForm {
+    margin-top: 20px;
+  }
+  
+  .CommentForm label {
+    font-family:'Futura', sans-serif ;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .CommentForm textarea {
+    font-family:'Futura', sans-serif ;
+    width: 70%;
+    height: 50px;
+    padding: 10px;
+  }
+  
+  .CommentForm button {
+    font-family:'Futura', sans-serif ;
+    background-color: #ff4500;
+    color: white;
+    border-radius: 4px;
+    padding: .5em .75em;
+  } */
+
+  .CommentForm {
+    margin-top: 20px;
+  }
+  
+  .CommentForm label {
+    font-family: 'Futura', sans-serif;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .CommentForm textarea {
+    font-family: 'Futura', sans-serif;
+    margin-left: 50px;
+    width: 70%;
+    height: 50px;
+    padding: .5em .75em; 
+    margin-bottom: 5px;
+  }
+  
+  .CommentForm button {
+      font-family:'Futura', sans-serif ;
+      margin-left: 80px;
+      margin-right: 80px;
+      background-color: #ff4500;
+      color: white;
+      border-radius: .25em; 
+      padding:.5em .75em; 
+      outline:none; 
+  }
+  .CommentForm button:hover {
+     background-color:#e63900 ;
+  }
+  

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import { getArticles } from '../../API/api';
 import Error from '../../../Error/Error';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -23,7 +24,13 @@ const ArticlesList = () => {
       });
   }, []);
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
+        <CircularProgress />
+      </div>
+    );
+  }
   else if (isError) return <Error title="404 Article Not Found" />
 
   return (
