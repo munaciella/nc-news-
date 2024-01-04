@@ -35,7 +35,9 @@
   
   .CommentForm textarea {
     font-family: 'Futura', sans-serif;
-    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 70px;
     width: 70%;
     height: 50px;
     padding: .5em .75em; 
