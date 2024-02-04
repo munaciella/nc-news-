@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
  
   return (
     <>
-      <div>
+      <div className='article-container'>
         <Card className="article-card" variant="outlined">
           <ul className="article">
             

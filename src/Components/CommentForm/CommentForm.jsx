@@ -92,20 +92,23 @@ const CommentForm = ({ article_id, comments, setComments }) => {
 
     return (
         <div className="CommentForm">
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="comment">Add a Comment</label>
-
-                <textarea
-                    id="comment"
-                    onChange={handleChange}
-                    value={input}
-                    placeholder="Write your comment here"
-                    required
-                />
-                <button>Submit</button>
-            </form>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="comment" className="InputLabel">
+              Add a Comment
+            </label>
+      
+            <textarea
+              id="comment"
+              onChange={handleChange}
+              value={input}
+              placeholder="Write your comment here"
+              className="CommentTextArea"
+              required
+            />
+            <button className="SubmitButton">Submit</button>
+          </form>
         </div>
-    );
-};
-
+      );
+    }
+      
 export default CommentForm;
