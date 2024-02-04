@@ -1,6 +1,7 @@
 .card {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .thumbs-up,
@@ -9,8 +10,9 @@
 }
 
 .votes {
-  margin-right: 10px;
-  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .fab-button {

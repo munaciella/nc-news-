@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
       <div>
         <Card className="article-card" variant="outlined">
           <ul className="article">
-            <Vote article_id={article_id} votes={votes} />
+            
             <h3>{title}</h3>
             <h4>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h4>
             <Link to={`/articles/${article_id}`}>
@@ -23,6 +23,7 @@ const ArticleCard = ({ article }) => {
             </Link>
             <p>Author: {author}</p>
             <p>{comment_count} comments</p>
+            <Vote article_id={article_id} votes={votes} />
             <p>{body}</p>
             Created on {date.toLocaleDateString()} at{' '}
             <time>{date.toLocaleTimeString()}</time>

@@ -37,7 +37,7 @@ const ArticlesList = () => {
     <>
     <div className="article-list">
       {articles.map((article) => {
-        return <ArticleCard key={article.article_id} article={article} />;
+        return <ArticleCard key={article.article_id} article={article} className="ArticleCard"/>;
       })}
       </div>
     </>
