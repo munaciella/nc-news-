@@ -1,19 +1,26 @@
 .user-card {
-    background-color: #f0f0f0; /* Background color */
-    padding: 10px; /* Padding for the card */
-    border-radius: 8px; /* Rounded corners */
-    width: 200px; /* Width of the card */
+    background-color: antiquewhite; 
+    padding: 10px;
+    border-radius: 12px; 
+    width: 200px; 
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   
   .user-card img {
-    width: 100px; /* Width of the user avatar */
-    height: 100px; /* Height of the user avatar */
-    border-radius: 50%; /* Make the avatar round */
+    width: 90px; 
+    height: 90px;
+    border-radius: 15%; 
+    background-color: antiquewhite;
+    padding-top: 10px;
+    padding-bottom: -5px;
   }
   
   .user-card h3 {
-    font-size: 14px; /* Font size of the username */
-    margin-top: 5px; /* Margin from the top */
-    text-align: center; /* Center align the username */
+    font-size: 14px; 
+    margin-top: 5px; 
+    text-align: center; 
+    color: black;
+    font-family: 'Futura', sans-serif;
   }
   

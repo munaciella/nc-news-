@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
+    font-family: 'Futura', sans-serif;
   }
   
   .login section {
@@ -9,11 +11,12 @@
   }
   
   .login .signin {
-    background-color: #ffffff;
+    background-color: blanchedalmond;
     padding: 20px;
+    font-family: 'Futura', sans-serif;
   }
   
   .login .userlist {
-    background-color: #ffffff;
+    background-color: blanchedalmond;
     padding: 20px;
   }

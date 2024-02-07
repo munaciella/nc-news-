@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import { getUsers } from "../../API/api";
+import './UserList.css'
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -27,7 +28,7 @@ export default function UserList() {
       if (isError) return <h2>Something went wrong</h2>;
 
   return (
-    <div>
+    <div className="users">
       <h2>Users:</h2>
       <div className="grid-container">
         {users
@@ -37,7 +38,7 @@ export default function UserList() {
           .slice(count - 2, count)}
       </div>
       <button
-        className="button-blue"
+        className="button"
         onClick={() => {
           if (count >= users.length) {
             setCount(2);
