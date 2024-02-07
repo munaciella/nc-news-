@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
 #login-form {
     display: flex;
     flex-direction: column;
@@ -5,15 +16,18 @@
   
   .login-form-label {
     font-weight: bold;
+    color: black;
+    padding-top: 4px;
   }
   
   .login-form-field {
     padding: 8px;
     margin-bottom: 16px;
+    padding-bottom: 4px;
   }
   
   #login-form-submit {
     background-color: #ff4500;
-    color: white;
     padding: 8px;
+    font-family: 'Futura', sans-serif;
   }

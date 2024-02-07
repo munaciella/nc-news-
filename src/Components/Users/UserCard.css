@@ -1,0 +1,19 @@
+.user-card {
+    background-color: #f0f0f0; /* Background color */
+    padding: 10px; /* Padding for the card */
+    border-radius: 8px; /* Rounded corners */
+    width: 200px; /* Width of the card */
+  }
+  
+  .user-card img {
+    width: 100px; /* Width of the user avatar */
+    height: 100px; /* Height of the user avatar */
+    border-radius: 50%; /* Make the avatar round */
+  }
+  
+  .user-card h3 {
+    font-size: 14px; /* Font size of the username */
+    margin-top: 5px; /* Margin from the top */
+    text-align: center; /* Center align the username */
+  }
+  
