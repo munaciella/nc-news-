@@ -33,12 +33,13 @@ body {
 
 #login-form-submit {
   background-color: #ff4500;
-  padding: 8px;
+  padding: 8px; /* You can keep the padding if you want */
+  width: 200px; /* Set a fixed width for the button */
   font-family: 'Futura', sans-serif;
   margin-top: 26px;
   border-radius: 8px;
-  margin-left: 160px;
-  margin-right: 160px;
+  margin-left: auto; /* Center the button horizontally */
+  margin-right: auto; /* Center the button horizontally */
 }
 
 #username-field {
