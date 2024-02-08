@@ -23,6 +23,7 @@
 }
 
 .CommentForm button {
+  font-size: 14px;
   font-family: 'Futura', sans-serif;
   margin-left: 80px;
   margin-right: 80px;
@@ -35,4 +36,13 @@
 }
 .CommentForm button:hover {
   background-color: #e63900;
+}
+
+.InputLabel {
+  color: black;
+  font-family: 'Futura', sans-serif;
+}
+
+.SubmitButton {
+  border: none;
 }

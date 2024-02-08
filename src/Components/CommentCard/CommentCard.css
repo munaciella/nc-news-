@@ -86,3 +86,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.delete-button-comment {
+  font-family: 'Futura', sans-serif;
+}
