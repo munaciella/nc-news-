@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import { getUsers } from "../../API/api";
 import './UserList.css'
+import { CircularProgress } from "@mui/material";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -24,7 +25,23 @@ export default function UserList() {
           });
   }, []);
 
-  if (isLoading) return <h2>Loading...</h2>;
+  // if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '5px'
+      }}>
+        <CircularProgress />
+      </div>
+    );
+  }
       if (isError) return <h2>Something went wrong</h2>;
 
   return (

@@ -26,7 +26,10 @@ const ArticlesList = () => {
 
   if (isLoading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
+      <div style={{ position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
         <CircularProgress />
       </div>
     );

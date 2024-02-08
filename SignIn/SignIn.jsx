@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UsernameContext } from "../src/Components/UsernameContext/UsernameContext";
 import { getUser } from "../src/API/api";
 import './SignIn.css'
+import { CircularProgress } from "@mui/material";
 
 const SignIn = () => {
     const { username, setUsername } = useContext(UsernameContext)
@@ -29,7 +30,23 @@ const SignIn = () => {
             setIsLoading(false);
           });
           
-      if (isLoading) return <div className="loading-container"><h2>Loading...</h2></div>;
+      // if (isLoading) return <div className="loading-container"><h2>Loading...</h2></div>;
+      if (isLoading) {
+        return (
+          <div style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '5px'
+          }}>
+            <CircularProgress />
+          </div>
+        );
+      }
 if (isError) return <div className="error-container"><h2>Something went wrong</h2></div>;
     };
   
