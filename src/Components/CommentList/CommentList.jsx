@@ -5,12 +5,12 @@ import { useParams } from 'react-router-dom';
 import CommentForm from '../CommentForm/CommentForm';
 
 const CommentList = () => {
-    const {article_id} = useParams()
+  const { article_id } = useParams();
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  
+
   useEffect(() => {
     setIsLoading(true);
     getComments(article_id)
@@ -31,34 +31,41 @@ const CommentList = () => {
   if (isError) return <h2>Something went wrong</h2>;
 
   const handleDelete = (comment_id) => {
-    setDisabled(true)
+    setDisabled(true);
     deleteComment(comment_id)
       .then(() => {
-        const newComments = comments.filter((comments) => comments.comment_id != comment_id);
-        setComments(newComments)
-        })
+        const newComments = comments.filter(
+          (comments) => comments.comment_id != comment_id
+        );
+        setComments(newComments);
+      })
       .catch(() => {
         setIsError(true);
       })
       .finally(() => {
-        setDisabled(false)
+        setDisabled(false);
         setTimeout(() => {
           setIsError(false);
         }, 2000);
-      })
-  }
+      });
+  };
 
   return (
     <>
-    <section>
-        <CommentForm article_id={article_id} setComments={setComments}/>
-      <ul>
-
-        {comments.map((comment) => {
-          return <CommentCard key={comment.comment_id} comment={comment} handleDelete={handleDelete}/>;
-        })}
-      </ul>
-    </section>
+      <section>
+        <CommentForm article_id={article_id} setComments={setComments} />
+        <ul>
+          {comments.map((comment) => {
+            return (
+              <CommentCard
+                key={comment.comment_id}
+                comment={comment}
+                handleDelete={handleDelete}
+              />
+            );
+          })}
+        </ul>
+      </section>
     </>
   );
 };

@@ -1,6 +1,5 @@
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-// import { Box, Fab } from '@mui/material';
 import { useState } from 'react';
 import { voteArticle } from '../../API/api';
 import './Vote.css';
