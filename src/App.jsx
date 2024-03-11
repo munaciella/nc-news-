@@ -4,10 +4,10 @@ import ArticlePage from './Components/ArticlePage/ArticlePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import { UsernameProvider } from "../src/Components/UsernameContext/UsernameContext.jsx"
-import LoginPage from '../LoginPage/LoginPage.jsx';
-import Error from '../Error/Error.jsx';
-import NavBar from '../NavBar/NavBar.jsx';
-import SignUp from '../SignUp/SignUp.jsx';
+import LoginPage from './Components/LoginPage/LoginPage.jsx';
+import Error from './Components/Error/Error.jsx';
+import NavBar from './Components/NavBar/NavBar.jsx';
+import SignUp from './Components/SignUp/SignUp.jsx';
 
 function App() {
   return (

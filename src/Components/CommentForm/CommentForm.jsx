@@ -51,6 +51,7 @@ const CommentForm = ({ article_id, comments, setComments }) => {
           style={{
             fontFamily: 'Futura, sans-serif',
             fontSize: '16px',
+            color: 'black',
             padding: '10px',
             border: '1px solid #ccc',
             borderRadius: '8px',

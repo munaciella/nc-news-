@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import { getArticles } from '../../API/api';
-import Error from '../../../Error/Error';
+import Error from '../Error/Error';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const ArticlesList = () => {

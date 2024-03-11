@@ -3,7 +3,7 @@ import ArticleCard from '../ArticleCard/ArticleCard';
 import { useParams } from 'react-router-dom';
 import { getArticleById } from '../../API/api';
 import CommentList from '../CommentList/CommentList';
-import Error from '../../../Error/Error';
+import Error from '../Error/Error';
 
 const ArticlePage = (comment) => {
   const { article_id } = useParams();
